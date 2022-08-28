@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+
+            <div class="py-5 text-center">
+                <h2>Retira Cliente</h2>
+            </div>
+
+
+                <!----------------------Nombre del cliente---------------------->
+<form class="needs-validation" novalidate method="POST">
+    {% csrf_token %}
+    <div class="row g-3">
+        <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombre completo</label>
+            <input type="text" name="nombre_cliente" class="form-control" placeholder="Laura Lopez" value=""
+                required>
+            <div class="invalid-feedback">
+                Debe indicar un nombre.
+            </div>
+        </div>
+
+        <!----------------------Ci Cliente----------------------->
+        <div class="col-sm-6">
+            <label for="lastName" class="form-label">Cedula del Cliente %</label>
+            <input type="number" name="ci_cliente" class="form-control" placeholder="41234560" value=""
+                required>
+            <div class="invalid-feedback">
+                Debe indicar la cedula.
+            </div>
+        </div>
+
+
+        <!----------------------Articulo----------------------->
+        <div class="col-12">
+            <label for="username" class="form-label">Articulo a retirar</label>
+            <div class="input-group has-validation">
+                <input type="text" name="articulo_cliente" class="form-control" placeholder="001.12345000139.0" required>
+                <div class="invalid-feedback">
+                    Debe indicar el articulo.
+                </div>
+            </div>
+        </div>
+
+
+        <!----------------------Sucursal a retirar--------------->
+        <div class="col-12">
+            <label for="email" class="form-label">Sucursal donde retira</label>
+            <select class="form-select" name="sucursal_retiro" required>
+                <option value="">Seleccione la sucursal...</option>
+                {% for s in sucursales %}
+                <option>{{s.nombre_sucursales}}</option>
+                {% endfor %}
+
+            </select>
+        </div>
+
+        <!----------------------Transaccion Visual-------------->
+        <div class="col-12">
+            <label for="address" class="form-label">Numero de transaccion</label>
+            <input type="number" name="transaccion_visual" class="form-control" placeholder="12345"
+                required>
+            <div class="invalid-feedback">
+                Debe indicar el numero de transaccion.
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Generar</button>
+        
+</form>
+    </div>
+    </div>
+</body>
+
+
+
+{% endblock %}}

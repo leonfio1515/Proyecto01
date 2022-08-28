@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Contact section-->
+
+<div class="container px-5 my-5 px-5">
+    <div class="text-center mb-5">
+        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+        <h2 class="fw-bolder">Quebrantos</h2>
+    </div>
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-7">
+
+            {% for e in error %}
+            <center>
+                <p>
+                <h4 style="color:red">{{e}}</h4>
+                </p>
+            </center>
+            <br>
+            {% endfor %}
+
+
+            <form class="needs-validation" method="POST">{% csrf_token %}
+
+                <div class="row g-3 col-sm-9">
+
+
+    <!----------------------Sucursal------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Sucursal:</label>
+        <input type="number" min="1" class="form-control" value="" name="sucursal">
+    </div>
+
+    <!----------------------Fecha Dif------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Fecha del faltante:</label>
+        <input type="date" class="form-control" value="" name="fecha_faltante">
+    </div>
+
+
+    <!----------------------Num cajera------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Num Cajera:</label>
+        <input type="number" min="1000" class="form-control" value="" name="num_cajera">
+    </div>
+
+    <!----------------------Nombre cajera------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Nombre Cajera:</label>
+        <input type="text" class="form-control" value="" name="nombre_cajera">
+    </div>
+
+    <!----------------------Boleta------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Boleta:</label>
+        <input type="number" min="1" class="form-control" value="" name="num_boleta">
+    </div>
+
+
+    <!----------------------Importe------------------------------>
+    <div class="col-sm-6">
+        <label style="font-weight:bold" class="form-label">Importe:</label>
+        <input type="number" min="1" class="form-control" value="" name="importe_faltante">
+    </div>
+
+
+    <!----------------------Comentario------------------------------>
+    <div class="col-sm-12">
+        <label style="font-weight:bold" class="form-label">Comentario:</label>
+        <textarea type="text" class="form-control" value="" name="comentario"></textarea>
+    </div>
+
+
+                    <!---------------- Submit Button------------------------------->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Enviar
+                            <i class="bi bi-upload"></i>
+                        </button>
+                    </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

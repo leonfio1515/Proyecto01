@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Contact section-->
+
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+            <h2 class="fw-bolder">Pedido de Luces</h2>
+        </div>
+    <div class="row gx-5 justify-content-center">
+    <div class="col-lg-6">
+    
+{% for e in error %}
+<center>
+<p><h4 style="color:red">{{e}}</h4></p>
+</center>
+<br>
+{% endfor %}
+
+<form class="needs-validation" method="POST">{% csrf_token %}
+
+
+<!-------------- Articulo input------------------------------------>
+<div class="form-check mb-3">
+
+    
+    {% for luces in luces_object %}
+    <ol>
+        <div class="row form-group">
+            <img src="{{luces.imagen_luces.url}}" class="col-md-3" height="50" width="50">
+            <div class="col-md-6">{{luces.nombre_luces}}</div>
+            <div class="col-md-3">
+            <input class="form-control text-center col-md-3" name="{{luces.nombre_luces}}" type="number" min="0"></div>
+
+    </div>
+    <hr>
+</ol>
+        {% endfor %}
+
+<!---------------- Submit Button------------------------------->
+    <div class="d-grid">
+    <button class="btn btn-primary btn-lg" type="submit">
+        Enviar 
+    <i class="bi bi-upload"></i>
+    </button>
+
+    </div>
+</form>
+
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}

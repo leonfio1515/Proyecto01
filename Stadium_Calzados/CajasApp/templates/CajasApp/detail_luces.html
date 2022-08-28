@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">AR111:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.AR111}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Dicroica Led:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Dicroica_led}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">EMB:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.EMB}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Lampara:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Lampara}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Par 30 luz fria:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Par30_fria}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Par 30 luz calida:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Par30_calida}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Tachos:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Tacho}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Driver Tachos:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Driver}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Tubo led:</li></div>
+            <div class="col">
+            <strong>{{pedidoluces.Tubo_led}}</strong></div>
+            <hr>
+        </div>
+
+
+
+        <br>
+            <a href="{% url 'luces_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

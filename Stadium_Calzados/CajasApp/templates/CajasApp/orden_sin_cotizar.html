@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Orden sin cotizar</h2>
+    </div>
+
+
+    <section style="margin: 5% auto ;text-decoration:underline">
+        <small>Si el importe figura en <strong style="color:green">Positivo</strong>, el cliente debe abonar una diferencia. 
+            Realizar seña contado/credito dependiendo de la forma de pago que utilice.
+            <br>
+            Si el importe figura en <strong style="color:red">Negativo</strong>, el cliente tiene saldo a favor. 
+            Pueden seguir vendiendole o realizar Seña a credito con los datos de la orden para futuras compras..<br></small>
+    </section>
+    <!----------------------DIV FORMULARIO------------------------------>
+
+    <div>
+        {% for e in error %}
+        <center>
+            <p>
+            <h5 style="color:red">{{e}}</h5>
+            </p>
+        </center>
+        <br>
+        {% endfor %}
+    </div>
+
+    <!----------------------Importe de compra------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Total de compra</label>
+                <input type="number" name="importe_compra" min="1" class="form-control" value="" required>
+                <div class="invalid-feedback">
+                    Debe indicar un importe.
+                </div>
+            </div>
+
+            <!----------------------Orden------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Importe de orden</label>
+                <input type="number" name="importe_orden" min="1"  class="form-control" value="" required>
+                <div class="invalid-feedback">
+                    Debe indicar un importe.
+                </div>
+            </div>
+
+
+            <!----------------------Cuotas------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Cantidad Cuotas</label>
+                <div class="input-group has-validation">
+                    <input type="number" name="cuotas_compra" class="form-control" min="1" max="12" required>
+                    <div class="invalid-feedback">
+                        Debe indicar las cuotas.
+                    </div>
+                </div>
+            </div>
+
+
+            <!----------------------Descuento------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Descuento %</label>
+                <input type="number" name="descuento_compra" class="form-control" min="0" max="25" required="False">
+            </div>
+
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular</button>
+    </form>
+</div>
+</div>
+
+
+{% endblock %}

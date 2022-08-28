@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Diferencia de caja</h2><br>
+        <h3>FALTANTES O SOBRANTES</h3>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+            <div class="col-sm-6">
+                <small>Enviar imagen por mal para importes mayores a $100.
+                    <br>Si el importe supera o iguala los $500, enviar ademas planilla impresa con la caja
+                </small>
+            </div>
+
+            <h5><strong>{{user}}</strong></h5>
+            <h5>Fecha: {{fechaahora}}</h5>
+
+            <div class="col-sm-9"></div>
+
+            
+            <!----------------------Tipo------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Tipo de diferencia:</label>
+                <select class="form-select text-center col-md-9" name="valor_descuento" placeholder="Descuento" type="text" required>
+                    <option></option>
+                    <option>Faltante</option>
+                    <option>Sobrante</option>
+                </select>
+            </div>
+
+
+            <!----------------------Nº caja------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Nº de caja:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Importe------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Importe:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <div class="col-sm-9"></div>
+
+            <!----------------------Fecha ------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Fecha de la diferencia:</label>
+                <input type="date" class="form-control" value="">
+            </div>
+
+            <!----------------------Nombre Cajera------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Nombre Cajera:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-9"></div>
+
+            <!----------------------Datos------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Horario del Error:</label>
+                <input type="text" placeholder="Ultimo arqueo y hora del error" class="form-control" value="">
+            </div>
+            <div class="col-sm-9"></div>
+
+
+            <!----------------------Motivo------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Posible motivo:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-9"></div>
+
+            <!----------------------Trans del error------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Nº de transaccion del error:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+
+            <hr class="my-4">
+
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

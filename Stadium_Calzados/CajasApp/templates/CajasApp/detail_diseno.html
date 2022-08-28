@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidodiseno.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Talon de Cambio:</li></div>
+            <div class="col">
+            <strong>{{pedidodiseno.Talon_cambio}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Tarjeta Atencion al Cliente:</li></div>
+            <div class="col">
+            <strong>{{pedidodiseno.Tarjeta_atencion}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Tarjeta Presentacion Vendedor:</li></div>
+            <div class="col">
+            <strong>{{pedidodiseno.Tarjeta_presentacion}}</strong></div>
+        </div>
+        <hr>
+        <br>
+            <a href="{% url 'diseno_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

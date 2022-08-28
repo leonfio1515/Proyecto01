@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+        <div class="py-5 text-center">
+            <h2>Cotiza Orden</h2>
+        </div>
+
+ <!----------------------DIV FORMULARIO------------------------------>
+
+<div>
+    {% for e in error %}
+    <center>
+        <p>
+        <h5 style="color:red">{{e}}</h5>
+        </p>
+    </center>
+    <br>
+    {% endfor %}
+</div>
+
+ <!----------------------Importe de compra------------------------------>
+<form class="needs-validation" novalidate method="POST">
+    {% csrf_token %}
+    <div class="row g-3">
+        <div class="col-sm-6">
+            <label style="font-weight:bold" class="form-label">Importe de compra</label>
+            <input type="number" name="importe_compra" min="1" class="form-control" value="" required>
+            <div class="invalid-feedback">
+                Debe indicar un importe.
+            </div>
+        </div>
+
+        <!----------------------Descuento------------------------------>
+        <div class="col-sm-6">
+            <label style="font-weight:bold" class="form-label">Porcentaje Descuento %</label>
+            <input type="number" name="descuento_compra" min="0" max="25" class="form-control" value="" required>
+            <div class="invalid-feedback">
+                Debe indicar un descuento.
+            </div>
+        </div>
+
+
+        <!----------------------Cuotas------------------------------>
+        <div class="col-sm-6">
+            <label style="font-weight:bold" class="form-label">Cantidad Cuotas</label>
+            <div class="input-group has-validation">
+                <input type="number" name="cuotas_compra" class="form-control" min="1" max="12" required>
+                <div class="invalid-feedback">
+                    Debe indicar las cuotas.
+                </div>
+            </div>
+        </div>
+
+
+        <!----------------------Vendedor------------------------------>
+        <div class="col-sm-6">
+            <label style="font-weight:bold" class="form-label">Vendedor</label>
+            <input type="number" name="vendedor_compra" class="form-control" min="1000" max="9999" required="False">
+        </div>
+
+        <!----------------------Articulos------------------------------>
+        <div class="col-12">
+            <label style="font-weight:bold" class="form-label">Cantidad de articulos</label>
+            <input type="number" name="articulos_compra" class="form-control" min="1" required="FALSE">
+            <div class="invalid-feedback">
+                Debe indicar la cantidad de articulos.
+            </div>
+        </div>
+
+        <!----------------------Comentarios------------------------------>
+        <div class="col-12">
+            <label style="font-weight:bold" class="form-label">Comentarios </label>
+            <input type="text" name="comentarios_compra" class="form-control">
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular</button>
+</form>
+</div>
+</div>
+
+
+{% endblock %}

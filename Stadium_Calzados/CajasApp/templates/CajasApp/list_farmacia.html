@@ -1,0 +1,40 @@
+{% extends 'pedidos_list.html' %}
+
+{% block contlist %}
+<div class="col-9">
+<div class="table">
+
+    <center><br>
+        <h4><b>Pedido de Farmacia</b></h4>
+    </center><br>
+
+<table class="table" style="background-color: darkgrey;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Fecha Pedido</th>
+            <th scope="col">Usuario</th>
+        </tr>
+    </thead>
+
+<tbody><center>
+    
+{% for n in filtro %}
+
+<tr>
+    <td>{{ n.Fecha_pedido }}</td>
+    <td>{{ n.usuario }}</td>
+
+    <td><a type="button" class="btn btn-outline-success" href="{% url 'farmacia_detail' n.id %}">Detalle <i
+                class="bi bi-binoculars-fill"></i></a></td>
+</tr>
+</center>
+{% endfor %}
+    
+</tbody>
+</table>
+<br>
+</div>
+</div>
+
+{% endblock %}
+

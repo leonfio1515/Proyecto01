@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Vale Creditel / C de la Casa</h2>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" action="../vale_creditel_guarda" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+            <h5>Usuario: <strong>{{user}}</strong></h5>
+
+
+            <!----------------------Hidden------------------------------>
+                <input type="hidden"value="{{form.id}}" name="id">
+                <input type="hidden" value="{{form.ci_cliente}}" name="ci_cliente">
+                <input type="hidden" value="{{form.nombre_cliente}}" name="nombre_cliente">
+                <input type="hidden" value="{{form.empresa_cliente}}" name="empresa_cliente">
+                <input type="hidden" value="{{form.importe_cliente}}" name="importe_cliente">
+                <input type="hidden" value="{{form.fpago_cliente}}" name="fpago_cliente">
+
+
+
+            <!----------------------Num cajera------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num cajera:</label>
+                <input type="number" min="1000000" class="form-control" value="" name="num_cajera" required>
+            </div>
+
+            <!----------------------Num vta------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Venta:</label>
+                <input type="number" min="1000" class="form-control" value="" name="num_vta" required>
+            </div>
+
+            <!----------------------Num dev------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Devolucion:</label>
+                <input type="number" min="1000" class="form-control" value="" name="num_dev" required>
+            </div>
+
+
+            <!----------------------Importe------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Importe Facturado:</label>
+                <input type="number" min="1000" class="form-control" value="" name="imp_facturado" required>
+            </div>
+            
+            <!----------------------Num seña------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Seña:</label>
+                <input type="number" min="1000" class="form-control" value="" name="num_seña" required>
+            </div>
+
+            <div class="col-sm-12">
+
+            <!----------------------Comentario------------------------------>
+            <div class="col-sm-8">
+                <label style="font-weight:bold" class="form-label">Comentarios:</label>
+                <textarea type="text" class="form-control" value="" name="comentarios" required></textarea>
+            </div>
+
+
+            <hr class="my-4">
+
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    Guardar
+                    <i class="bi bi-upload"></i>
+                </button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<a href="{% url 'lista_manuales' %}" class="btn btn-primary">< Regresar</a>
+</center>
+
+<iframe src="{{manuales.manual.url}}" width="100%" height="600px">{{manuales.nombre_manual}}</iframe>
+
+    {% endblock %}

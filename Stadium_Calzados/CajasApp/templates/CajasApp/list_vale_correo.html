@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <div class="col-10">
+        <div class="table">
+
+            <center><br>
+                <h4><b>Vale Correo</b></h4>
+            </center><br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="search">
+                        <form method="get">
+                            <div id="custom-search-input">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" min="0" placeholder="Buscar Cedula..."
+                                        name="buscar">
+                                    <span class="input-group-list"><i class="icon icon-search"></i>
+                                        <button type="submit" class="btn btn-success">Buscar</button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <table class="table" style="background-color: darkgrey;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Ci Cliente</th>
+                        <th scope="col">Nombre Cliente</th>
+                        <th scope="col">Importe</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <center>
+
+                        {% for n in filtro %}
+
+                        <tr>
+                            <td>{{ n.ci_cliente }}</td>
+                            <td>{{ n.nombre_cliente }}</td>
+                            <td>{{ n.importe_cliente }}</td>
+
+                            <td><a type="button" class="btn btn-outline-primary"
+                                    href="{% url 'vale_correo_update' n.id %}">Editar <i class="bi bi-pencil"></i></a>
+                            </td>
+                        </tr>
+                    </center>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+</center>
+
+{% endblock %}

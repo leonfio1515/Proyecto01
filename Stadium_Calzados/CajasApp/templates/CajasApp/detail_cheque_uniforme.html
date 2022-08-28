@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Fecha del pedido:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.fecha_registro}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">CI Funcionario:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.ci_fun}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Nombre Funcionario:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.nombre_fun}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Articulo:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.articulo}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Estado:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.estado_autorizacion}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Fecha Resolucion:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.fecha_resolucion}}</strong>
+            </div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <li class="card-text text-start">Comentarios:</li>
+            </div>
+            <div class="col">
+                <strong>{{chequeuniforme.comentarios_adm}}</strong>
+            </div>
+            <hr>
+        </div>
+
+
+        <hr>
+        <br>
+        <a id="boton" href="{% url 'cheque_uniforme_list' %}" class="btn btn-outline-primary"><i
+                class="bi bi-arrow-return-left"></i> Regresar</a>
+
+
+    </div>
+
+</center>
+
+
+{% endblock %}

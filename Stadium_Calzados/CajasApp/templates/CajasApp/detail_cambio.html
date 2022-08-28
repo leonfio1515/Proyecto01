@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Monedas 1$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.monedas_1}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Monedas 2$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.monedas_2}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Monedas 5$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.monedas_5}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Monedas 10$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.monedas_10}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Billetes 20$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.billetes_20}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Billetes 50$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.billetes_50}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Billetes 100$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.billetes_100}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Billetes 200$:</li></div>
+            <div class="col">
+            <strong>{{pedidocambio.billetes_200}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start"><strong>Fecha enviado:</strong></li></div>
+            <div class="col">
+            <strong>{{pedidocambio.fecha_enviado}}</strong></div>
+            <hr>
+        </div>
+
+
+        <hr>
+        <br>
+            <a href="{% url 'cambio_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

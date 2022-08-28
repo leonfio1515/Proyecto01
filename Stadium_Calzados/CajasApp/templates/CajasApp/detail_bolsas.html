@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidobolsas.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Bolsas Chicas:</li></div>
+            <div class="col">
+            <strong>{{pedidobolsas.Bolsa_chica}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Bolsas Medianas:</li></div>
+            <div class="col">
+            <strong>{{pedidobolsas.Bolsa_media}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Bolsas Grandes:</li></div>
+            <div class="col">
+            <strong>{{pedidobolsas.Bolsa_grande}}</strong></div>
+        </div>
+        <hr>
+        <br>
+            <a id="boton" href="{% url 'bolsas_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

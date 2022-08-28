@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Contact section-->
+
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+            <h2 class="fw-bolder">Pedido de Reparaciones</h2>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+
+{% for e in error %}
+<center>
+    <p>
+    <h4 style="color:red">{{e}}</h4>
+    </p>
+</center>
+<br>
+{% endfor %}
+
+<form class="needs-validation" method="POST">{% csrf_token %}
+
+
+    <!-------------- Articulo input------------------------------------>
+<div class="form-check mb-3">
+
+
+        <!-- Servicio input-->
+        <ol>
+            <div class="row form-group">
+                <label class="text-center">Servicio</label>
+                <select class="form-select text-center col-md-9" name="Servicio" placeholder="Servicio" type="text" required>
+                <option></option>
+                <option>Aire acondicionado</option>
+                <option>Sanitario</option>
+                <option>Electricidad</option>
+                <option>Vidriero</option>
+                <option>Albañileria</option>
+
+            </select>
+                <div class="invalid-feedback">Debe indicar un servicio.</div>
+            </div>
+            <hr>
+            </ol>
+
+            <!-- Asunto input-->
+            <ol>
+            <div class="row form-goup">
+                <label class="text-center">Asunto</label>
+                <input class="form-control text-center col-md-9" name="Asunto"  type="text">
+                <div class="invalid-feedback" required>Debe indicar un asunto.</div>
+            </div>
+            <hr>    
+        </ol>
+            
+            <!-- Comentario input-->
+            <ol>
+            <div class="row form-group">
+                <label class="text-center">Comentario</label>
+                <textarea class="form-control text-center col-md-9" name="Comentario" type="text" required></textarea>
+                <div class="invalid-feedback">Debe indicar un comentario.</div>
+            </div>
+            <hr>
+            </ol>
+
+
+<!---------------- Submit Button------------------------------->
+        <br>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit">
+                Enviar
+                <i class="bi bi-upload"></i>
+            </button>
+
+        </div>
+</form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

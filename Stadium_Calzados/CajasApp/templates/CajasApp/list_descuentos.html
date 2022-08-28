@@ -1,0 +1,41 @@
+{% extends 'pedidos_list.html' %}
+
+{% block contlist %}
+<div class="col-9">
+<div class="table">
+
+    <center><br><h4><b>Descuentos</b></h4></center><br>
+
+<table class="table" style="background-color: darkgrey;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Fecha Descuento</th>
+            <th scope="col">Nombre Descuento</th>
+            <th scope="col">Valor Descuento</th>
+            <th scope="col">Usuario</th>
+        </tr>
+    </thead>
+
+<tbody><center>
+    
+{% for n in filtro %}
+
+<tr>
+    <td>{{ n.fecha_descuento }}</td>
+    <td>{{ n.nombre_descuento }}</td>
+    <td>{{ n.valor_descuento }}</td>
+    <td>{{ n.usuario }}</td>
+
+
+</tr>
+</center>
+{% endfor %}
+    
+</tbody>
+</table>
+<br>
+</div>
+</div>
+
+{% endblock %}
+

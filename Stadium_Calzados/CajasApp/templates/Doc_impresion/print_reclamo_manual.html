@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Reclamo Manual</h2>
+        <h6>Remito de Reclamo Contingencia sin asociar al sistema</h6>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+            <h5><strong>{{user}}</strong></h5>
+            <h5>Fecha: {{fechaahora}}</h5>
+
+
+
+            <!----------------------Cajera------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Cajera:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <hr>
+            <div class="col-sm-12"></div>
+
+            <h4>Datos del cliente</h4>
+            <!----------------------Nombre y Apellido------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Nombre y Apellido:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+
+            <!----------------------Cedula------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Cedula:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+
+            <!----------------------Telefono------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Telefono:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-4"></div>
+
+
+<!----------------------------------------------------------------------------------------->
+            <hr>
+            <h4>Datos del reclamo</h4>
+
+            <h5>Fecha: {{fechaahora}}</h5>
+
+
+            <!----------------------Articulo------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Articulo:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+
+            <!----------------------Motivo------------------------------>
+            <div class="col-sm-5">
+                <label style="font-weight:bold" class="form-label">Motivo:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------CFE Trans------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">CFE-Trans:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+
+
+            <!----------------------Descripcion------------------------------>
+            <div class="col-sm-9">
+                <label style="font-weight:bold" class="form-label">Descripcion de la falla:</label>
+                <textarea type="text" class="form-control" value=""></textarea>
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Suc Original------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Suc Original:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Vendedor compra------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Vendedor Original:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Fecha compra------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Fecha compra:</label>
+                <input type="date" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Transaccion compra------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Nº de Trans:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Importe------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Importe:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+
+
+            <hr class="my-4">
+
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

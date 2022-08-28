@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Contact section-->
+
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+            <h2 class="fw-bolder">Dias de promocion</h2>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+
+                <form class="needs-validation" method="POST">{% csrf_token %}
+
+                <!-- Descuento input-->
+                <ol>
+                <div class="row form-group">
+                    <label class="text-center">Descuento</label>
+                    <select class="form-select text-center col-md-9" name="valor_descuento" placeholder="Descuento" type="text" required>
+                    <option></option>
+                    <option>15</option>
+                    <option>18.03</option>
+                    <option>20</option>
+                    <option>25</option>
+                </select>
+                    <div class="invalid-feedback">Debe indicar un descuento.</div>
+                </div>
+                <hr>
+                </ol>
+
+                <!-- Fecha input-->
+                <ol>
+                <div class="row form-goup">
+                    <label class="text-center">Fecha de descuento</label>
+                    <input class="form-control text-center col-md-9" name="fecha_descuento"  type="date">
+                    <div class="invalid-feedback" required>Debe indicar una fecha.</div>
+                </div>
+                <hr>    
+            </ol>
+                
+                <!-- Nombre input-->
+                <ol>
+                <div class="row form-group">
+                    <label class="text-center">Nombre de promocion</label>
+                    <input class="form-control text-center col-md-9" name="nombre_descuento" type="text" required>
+                    <div class="invalid-feedback">Debe indicar un nombre de promocion.</div>
+                </div>
+                <hr>
+                </ol>
+                    
+                    <!-- Submit Button-->
+                    <ol>
+                    <div class="row form-group">
+                        <button class="form-control btn btn-primary btn-lg" type="submit">Cargar <i
+                                class="bi bi-chat-left-text"></i></button>
+                    </div>
+                </ol>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Retira Cliente</h2>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+            <h5><strong>{{user}}</strong></h5>
+            <h5>Fecha: {{fechaahora}}</h5>
+            
+
+            <!----------------------Articulo------------------------------>
+            <div class="col-sm-9">
+                <label style="font-weight:bold" class="form-label">Articulo:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Transaccion------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Trans: A-</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Sucursal------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Sucursal donde retira:</label>
+                    <select class="form-select text-center col-md-9" name="valor_descuento" placeholder="Descuento" type="text" required>
+                        <option></option>
+                        {% for s in suc %}
+                        <option>{{s.numero_suc}}| {{s.direccion_suc}}</option>
+                        {% endfor %}
+                    </select>
+
+            </div>
+            <div class="col-sm-6"></div>
+
+            <br>
+            <h5>Firma Encargado:_______________________</h5>
+
+
+            <hr class="my-4">
+
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

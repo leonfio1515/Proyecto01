@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Servicio:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Servicio}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Asunto:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Asunto}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Comentario:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Comentario}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Estado:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Estado}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha resuelto</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Fecha_resuelto}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Comentario Administracion:</li></div>
+            <div class="col">
+            <strong>{{pedidoreparaciones.Comentario_resuelto}}</strong></div>
+            <hr>
+        </div>
+
+
+        <br>
+            <a href="{% url 'reparaciones_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

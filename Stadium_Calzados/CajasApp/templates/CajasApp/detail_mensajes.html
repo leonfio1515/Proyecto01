@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha creado:</li></div>
+            <div class="col">
+            <strong>{{mensajes.Fecha_creado}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Nombre:</li></div>
+            <div class="col">
+            <strong>{{mensajes.nombre}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Asunto:</li></div>
+            <div class="col">
+            <strong>{{mensajes.asunto}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Mensaje:</li></div>
+            <div class="col">
+            <strong>{{mensajes.mensaje}}</strong></div>
+        </div>
+        <hr> 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Respuesta:</li></div>
+            <div class="col">
+            <strong>{{mensajes.respuesta}}</strong></div>
+        </div>
+
+
+        <hr>
+        <br>
+            <a href="{% url 'mensajes_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

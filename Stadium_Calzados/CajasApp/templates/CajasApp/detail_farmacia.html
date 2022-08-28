@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Ibuprofeno:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Ibuprofeno}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Leuco:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Leuco}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Iodofon:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Iodofon}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Gasa:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Gasa}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Disan:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Disan}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Curitas:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Curitas}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Algodon:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Algodon}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Alcohol Rectificado:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Alcohol_rectificado}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Alcohol en Gel:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Alcohol_gel}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Agua Oxigenada:</li></div>
+            <div class="col">
+            <strong>{{pedidofarmacia.Agua_oxigenada}}</strong></div>
+            <hr>
+        </div>
+
+        <br>
+            <a href="{% url 'farmacia_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

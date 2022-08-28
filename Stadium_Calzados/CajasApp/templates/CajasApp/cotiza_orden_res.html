@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center; background-color:lightgray;">
+    <h6>Nº Reserva: <strong>{{reserva}}</strong></h6>
+    <h6>Importe de compra: <strong>${{importe_compra}}</strong></h6>
+    <h6>con un <strong>{{descuento_compra}}%</strong> de descuento.</h6>
+    <h6>Importe del descuento: <strong>${{imp_desc}}</strong></h6>
+    <br>
+    <h6>Importe con descuento: <strong>${{imp_cdesc}}</strong></h6>
+    <h6>Importe recargo: <strong>${{imp_recargo}}</strong></h6>
+    <br>
+
+    <h4>Importe de la orden <strong style="color:blue">${{tot_compra}}</strong>,</h4>
+    <h4>en {{cuotas_compra}} cuotas</h4>
+    <br>
+    <h6>Importe por cuota: <strong>{{imp_cuota}}</strong></h6>
+    <h6>Vendedor: <strong>{{vendedor_compra}}</strong></h6>
+    <h6>Cantidad articulos: {{articulos_compra}}</h6>
+    <h6>Comentarios: {{comentarios_compra}}</h6>
+    <h6>Fecha: {{fecha}}</h6>
+</div>
+    
+<br>
+<div>
+    <center>
+        <a href="{% url 'cotiza_orden' %}" class="btn btn-primary">
+            < Regresar</a>
+        <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </center>
+</div>
+
+
+{% endblock %}

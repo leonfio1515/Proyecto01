@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center; background-color:lightgray;">
+    <h6>Total de compra: <strong>${{importe_compra}}</strong></h6>
+    <h6>Importe de orden: <strong>${{importe_orden}}</strong></h6>
+    <h6>con un <strong>{{descuento_compra}}%</strong> de descuento.</h6>
+    <h6>Importe del descuento: <strong>${{imp_desc}}</strong></h6>
+    <br>
+    <h6>Importe recargo: <strong>${{imp_recargo}}</strong></h6>
+    <br>
+
+    <h5>en {{cuotas_compra}} cuotas</h5>
+    <br>
+    <h4><strong>${{tot_compra}}</strong></h4>
+
+</div>
+
+<br>
+<div>
+    <center>
+        <a href="{% url 'orden_sin_cotizar' %}" class="btn btn-primary">
+            < Regresar</a>
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </center>
+</div>
+
+{% endblock %}

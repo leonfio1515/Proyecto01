@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Contact section-->
+
+<div class="container px-5 my-5 px-5">
+    <div class="text-center mb-5">
+        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+        <h2 class="fw-bolder">Creditos Directos</h2>
+    </div>
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-7">
+
+            {% for e in error %}
+            <center>
+                <p>
+                <h4 style="color:red">{{e}}</h4>
+                </p>
+            </center>
+            <br>
+            {% endfor %}
+
+
+            <form class="needs-validation" method="POST">{% csrf_token %}
+
+                <div class="row g-3 col-sm-9">
+
+
+                    <!----------------------Num comercio------------------------------>
+                    <div class="col-sm-6">
+                        <label style="font-weight:bold" class="form-label">Num Orden:</label>
+                        <input type="number" min="1" class="form-control" value="" name="num_orden">
+                    </div>
+
+                    <!----------------------Fecha orden------------------------------>
+                    <div class="col-sm-6">
+                        <label style="font-weight:bold" class="form-label">Fecha orden:</label>
+                        <input type="date" class="form-control" value="" name="fecha_orden">
+                    </div>
+
+
+                    <!----------------------Importe------------------------------>
+                    <div class="col-sm-6">
+                        <label style="font-weight:bold" class="form-label">importe:</label>
+                        <input type="number" min="1000" class="form-control" value="" name="importe">
+                    </div>
+
+                    <!----------------------Plan------------------------------>
+                    <div class="col-sm-6">
+                        <label style="font-weight:bold" class="form-label">Plan:</label>
+                        <select class="form-select text-center col-md-9" name="plan" placeholder="plan" type="text" required>
+                            <option></option>
+                            <option>A2</option>
+                            <option>A3</option>
+                            <option>A4</option>
+                            <option>A5</option>
+                            <option>A6</option>
+                            <option>A10</option>
+                            <option>B1</option>
+                            <option>B2</option>
+                            <option>B3</option>
+                            <option>B3 60</option>
+                            <option>B4</option>
+                            <option>B5</option>
+                            <option>B6</option>
+                    
+                        </select>
+                    </div>
+
+                    <!---------------- Submit Button------------------------------->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Enviar
+                            <i class="bi bi-upload"></i>
+                        </button>
+                    </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

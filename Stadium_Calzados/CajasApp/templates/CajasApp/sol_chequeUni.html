@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="{% static 'css/form-validation.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+
+        <main>
+            <div class="py-5 text-center">
+                <h2>Solicitud de Cheque Uniforme</h2>
+            </div>
+
+
+            <!----------------------DIV FORMULARIO------------------------------>
+
+            <div class="col-md-12">
+                <h4 class="mb-3">Cheque uniforme</h4>
+
+                <form class="needs-validation" novalidate method="POST">
+                    {% csrf_token %}
+
+
+                        <!----------------------Cedula------------------------------>
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Numero de Cedula</label>
+                            <input maxlength="7" minlength="7" type="number" name="cedula_funcionario" class="form-control" placeholder="4123456" value="" required>
+                            <div class="invalid-feedback">
+                                Debe indicar el numero de Cedula.
+                            </div>
+                        </div>
+
+                    <!----------------------Sucursal------------------------------>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">Sucursal</label>
+                            <select type="text" name="sucursal_cheque" class="form-control" placeholder="1" value=""
+                                required>
+                                <option value="">Seleccione la sucursal...</option>
+                                
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                                <option>32</option>
+                                <option>51</option>
+                                <option>52</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Debe indicar una sucursal.
+                            </div>
+                        </div>
+
+
+                        <!----------------------Articulo------------------------------>
+                        <div class="col-12">
+                            <label for="username" class="form-label">Articulo</label>
+                            <div class="input-group has-validation">
+                                <input maxlength="17" minlength="17" type="text" name="articulo_cheque" class="form-control" placeholder="001.01234100039.0" required>
+                                <div class="invalid-feedback">
+                                    Debe indicar un articulo.
+                                </div>
+                            </div>
+                        </div>
+
+
+                         <!----------------------Comentarios------------------------------>
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Comentarios </label>
+                            <input type="text" name="comentario_cheque" class="form-control"
+                                placeholder="Algun comentario">
+                        </div>
+
+                        <hr class="my-4">
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular</button>
+                </form>
+            </div>
+    </div>
+    </main>
+
+
+    <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/form-validation.js' %}"></script>
+</body>
+
+</html>
+
+{% endblock %}

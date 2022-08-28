@@ -1,0 +1,52 @@
+{% extends 'pedidos_list.html' %}
+
+{% block contlist %}
+<div class="col-9">
+    <div class="table">
+
+        <center><br>
+            <h4><b>Cheque Uniforme</b></h4>
+        </center><br>
+
+        <table class="table" style="background-color: darkgrey;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Fecha Pedido</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Articulo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha Resolucion</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <center>
+
+                    {% for n in filtro %}
+
+                    <tr>
+                        <td>{{ n.fecha_registro }}</td>
+                        <td>{{ n.usuario }}</td>
+                        <td>{{ n.nombre_fun }}</td>
+                        <td>{{ n.articulo }}</td>
+                        <td>{{ n.estado_autorizacion }}</td>
+                        <td>{{ n.fecha_resolucion }}</td>
+
+                        <td><a type="button" class="btn btn-outline-success"
+                                href="{% url 'cheque_uniforme_detail' n.id %}">Detalle <i class="bi bi-binoculars-fill"></i></a>
+                        </td>
+
+
+                    </tr>
+                </center>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

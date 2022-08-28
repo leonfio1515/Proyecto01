@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Calcula disponible - Orden</h2>
+    </div>
+
+
+    <section style="margin: 5% auto ;text-decoration:underline">
+        <small>Se utiliza para calcular el disponible en compras que tiene una orden.<br></small>
+    </section>
+    <!----------------------DIV FORMULARIO------------------------------>
+
+    <div>
+        {% for e in error %}
+        <center>
+            <p>
+            <h5 style="color:red">{{e}}</h5>
+            </p>
+        </center>
+        <br>
+        {% endfor %}
+    </div>
+
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3">
+
+            <!----------------------Orden------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Importe de orden</label>
+                <input type="number" name="importe_orden" min="1"  class="form-control" value="" required>
+                <div class="invalid-feedback">
+                    Debe indicar un importe.
+                </div>
+            </div>
+
+
+            <!----------------------Cuotas------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Cantidad Cuotas</label>
+                <div class="input-group has-validation">
+                    <input type="number" name="cuotas_compra" class="form-control" min="1" max="12" required>
+                    <div class="invalid-feedback">
+                        Debe indicar las cuotas.
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular</button>
+    </form>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    
+<div class="container">
+
+
+    <div class="py-2 text-center">
+      <h2>Calcula Descuento</h2>
+    </div>
+<section style="margin: 5% auto ;text-decoration:underline">
+    <small>Esta planilla se utiliza en casos especiales, donde el cliente según las formas de pago tenga diferentes descuentos.
+    EJEMPLO: Un cliente desea llevar mercaderias por $3000, por abonar con cierta tarjeta tiene 25% de descuento, se calcula
+    el primer total y luego el restante con otro descuento.<br></small>
+</section>
+<!----------------------DIV FORMULARIO------------------------------>
+<div>
+{% for e in error %}
+<center>
+  <p><h5 style="color:red">{{e}}</h5></p>
+</center>
+<br>
+{% endfor %}
+</div>
+<!----------------------Importe de compra------------------------------>
+        <form class="needs-validation" novalidate method="POST">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label" style="font-weight:bold">Total sin descuento</label>
+              <input type="number" name="importe_compra" class="form-control" value="" required>
+              <div class="invalid-feedback">
+                Debe indicar un importe.
+              </div>
+            </div>
+
+<!----------------------Monto a pagar------------------------------>
+            <div class="col-sm-6">
+              <label for="lastName" style="font-weight:bold" class="form-label">El cliente quiere pagar</label>
+              <input type="number" name="monto_paga"  class="form-control" value="">
+              <div class="invalid-feedback">
+                Debe indicar un monto.
+              </div>
+            </div>
+
+
+<!----------------------Descuento monto a pagar------------------------------>
+            <div class="col-12">
+              <label for="username" style="font-weight:bold" class="form-label">Porcentaje descuento del monto a pagar %</label>
+              <div class="input-group has-validation">
+                <input type="number" name="descuento_paga" class="form-control" required>
+              <div class="invalid-feedback">
+                  Debe indicar un descuento.
+                </div>
+              </div>
+            </div>
+
+
+<!----------------------Descuento de diferencia------------------------------>
+            <div class="col-12">
+              <label for="email" style="font-weight:bold" class="form-label">Descuento de diferencia <span class="text-muted">(Optional)</span></label>
+              <input type="number" name="descuento_dif" class="form-control">
+            </div>
+
+         
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Calcular</button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}

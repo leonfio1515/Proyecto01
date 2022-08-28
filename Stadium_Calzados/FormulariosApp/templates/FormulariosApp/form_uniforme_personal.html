@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Uniforme Personal</h2>
+        <h6>(Indumentaria)</h6>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+            <h5><strong>{{user}}</strong></h5>
+
+
+            <!----------------------Num Funcionario------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Numero de funcionario:</label>
+                <input type="number" min="1000" class="form-control" value="" name="num_fun" required>
+            </div>
+
+            <!----------------------CI------------------------------>
+                <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">CI del funcionario:</label>
+                <input type="number" min="1000000" max="9999999" class="form-control" value="" name="ci_fun" required>
+            </div>
+
+            <!----------------------Area de trabajo------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Area de trabajo:</label>
+                    <select class="form-select text-center col-md-9" name="area_trabajo" type="text" required>
+                        <option></option>
+                        <option>Caja</option>
+                        <option>Vendedor</option>
+                        <option>Auxiliar sucursal</option>
+                        <option>Administrativo</option>
+                        <option>Deposito central</option>
+                    </select>
+            </div>
+
+
+            <!----------------------Sexo------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Sexo:</label>
+                    <select class="form-select text-center col-md-9" name="sexo" type="text" required>
+                        <option></option>
+                        <option>Mujer</option>
+                        <option>Hombre</option>
+                    </select>
+            </div>
+            <div class="col-sm-6"></div>
+
+
+            <!----------------------Pantalon------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Pantalon - Talle:</label>
+                <select class="form-select text-center col-md-9" name="talle_pantalon" type="text"
+                    required>
+                    <option>No solicita</option>
+                    <option>36</option>
+                    <option>38</option>
+                    <option>40</option>
+                    <option>42</option>
+                    <option>44</option>
+                    <option>46</option>
+                    <option>48</option>
+                    <option>50</option>
+                    <option>52</option>
+                    <option>54</option>
+                    <option>Maternal</option>
+                </select>
+            </div>
+
+
+            <!----------------------Camisa------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Camisa - Talle:</label>
+                <select class="form-select text-center col-md-9" name="talle_camisa" type="text"
+                    required>
+                    <option>No solicita</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>3XL</option>
+                    <option>4XL</option>
+                    <option>5XL</option>
+                </select>
+            </div>
+
+            <!----------------------Buzo------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Buzo/Saco - Talle:</label>
+                <select class="form-select text-center col-md-9" name="talle_abrigo" type="text"
+                    required>
+                    <option>No solicita</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>3XL</option>
+                </select>
+            </div>
+            <div class="col-sm-4"></div>
+
+            <hr class="my-4">
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit">
+                Enviar
+                <i class="bi bi-upload"></i>
+            </button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

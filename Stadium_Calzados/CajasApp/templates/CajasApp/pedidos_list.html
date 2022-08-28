@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="d-flex flex-nowrap">
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="15" height="32"></svg>
+      <span class="fs-5">Pedidos realizados</span></a>
+    <hr>
+    
+    <ol class="nav nav-pills flex-column mb-auto">
+      
+<li>
+    <a href="{% url 'cheque_uniforme_list' %}" class="nav-link text-white">
+        <svg class="bi pe-none me-2" width="16" height="16"></svg>
+        Cheque Uniforme</a></li>
+<hr>
+
+<li class="nav-item">
+    <a href="{% url 'bolsas_list' %}" class="nav-link text-white" aria-current="page">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Bolsas</a></li>
+
+<li>
+    <a href="{% url 'diseno_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Diseño</a></li>
+
+<li>
+    <a href="{% url 'farmacia_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Farmacia</a></li>
+      
+<li>
+    <a href="{% url 'limpieza_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Limpieza</a></li>
+
+<li>
+    <a href="{% url 'luces_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Luces</a></li>
+
+<li>
+    <a href="{% url 'papeleria_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Papeleria</a></li>
+
+<li>
+    <a href="{% url 'reparaciones_list' %}" class="nav-link text-white">
+    <svg class="bi pe-none me-2" width="16" height="16"></svg>
+    Reparaciones</a></li>
+    <hr>
+
+    <li class="nav-item">
+        <a href="{% url 'cambio_list' %}" class="nav-link text-white">
+        <svg class="bi pe-none me-2" width="16" height="16"></svg>
+        Pedido Cambio</a></li>
+    
+<hr>
+    <li class="nav-item">
+        <a href="{% url 'descuentos_list' %}" class="nav-link text-white">
+        <svg class="bi pe-none me-2" width="16" height="16"></svg>
+        Descuentos</a></li>
+    
+    </ol>
+</div>
+
+{% block contlist %}
+
+{% endblock %}
+  
+</div>
+</main>
+
+{% endblock %}
+

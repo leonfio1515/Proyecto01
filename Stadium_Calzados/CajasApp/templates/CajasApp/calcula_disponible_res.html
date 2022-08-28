@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center; background-color:lightgray;">
+    <br>
+    <h6>Importe de orden: <strong>${{importe_orden}}</strong></h6>
+    <h5>en {{cuotas_compra}} cuotas</h5>
+
+    <h6>Importe recargo: <strong>${{imp_recargo}}</strong></h6>
+    <br>
+    <h4>Disponible en mercaderia: <strong>${{disponible}}</strong></h4>
+    <br>
+
+</div>
+
+<br>
+<div>
+    <center>
+        <a href="{% url 'calcula_disponible' %}" class="btn btn-primary">
+            < Regresar</a>
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </center>
+</div>
+
+{% endblock %}

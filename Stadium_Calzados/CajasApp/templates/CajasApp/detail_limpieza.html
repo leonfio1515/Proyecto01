@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <br>
+    <div class="container">
+ 
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Fecha del pedido:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Fecha_pedido}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Plumero:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Plumero}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">    
+            <div class="col">   
+            <li class="card-text text-start">Insecticida:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Insecticida}}</strong></div>
+            <hr>          
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Pulidor Cremoso:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Pulidor_cremoso}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Perfumol:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Perfumol}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Papel Higienico:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.PH}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Paños de piso:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Panos_piso}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Limpia vidrio:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Limpia_vidrio}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Hipoclorito:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Hipoclorito}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Jabon Liquido:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Jabon_liq}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Franela:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Franela}}</strong></div>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Esponja:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Esponja}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Detergente:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Detergente}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Cera Roja:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Cera_roja}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Cera Incolora:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Cera_incolora}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Bolsas:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Bolsas}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Lustramueble:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Lustramueble}}</strong></div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+            <li class="card-text text-start">Desodorante ambiente:</li></div>
+            <div class="col">
+            <strong>{{pedidolimpieza.Des_ambiente}}</strong></div>
+            <hr>
+        </div>
+
+
+
+        <br>
+            <a href="{% url 'limpieza_list' %}" class="btn btn-outline-primary"><i
+                    class="bi bi-arrow-return-left"></i> Regresar</a>
+        
+
+        </div>
+
+</center>
+
+
+{% endblock %}

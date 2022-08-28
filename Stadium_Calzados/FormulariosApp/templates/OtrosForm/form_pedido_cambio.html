@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Contact section-->
+
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+            <h2 class="fw-bolder">Pedido de Cambio</h2>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+
+{% for e in error %}
+<center>
+    <p>
+    <h4 style="color:red">{{e}}</h4>
+    </p>
+</center>
+<br>
+{% endfor %}
+
+<form class="needs-validation" method="POST">{% csrf_token %}
+
+
+    <!-------------- Cambio------------------------------------>
+<div class="form-check mb-3">
+
+
+    <!---------------- 1-------------------------->
+        <ol>
+            <div class="row form-group">
+                <label class="text-center">Monedas 1$</label>
+                <select class="form-select text-center col-md-9" name="1$" type="number" required>
+                <option></option>
+                <option>0</option>
+                <option>100</option>
+                <option>200</option>
+                <option>300</option>
+                <option>400</option>
+                <option>500</option>
+                <option>600</option>
+                <option>700</option>
+                <option>800</option>
+                <option>900</option>
+                <option>1000</option>
+
+            </select>
+            </div>
+            <hr>
+            </ol>
+
+    <!---------------- 2-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Monedas 2$</label>
+            <select class="form-select text-center col-md-9" name="2$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+            <option>600</option>
+            <option>700</option>
+            <option>800</option>
+            <option>900</option>
+            <option>1000</option>
+
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+    <!---------------- 5-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Monedas 5$</label>
+            <select class="form-select text-center col-md-9" name="5$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>500</option>
+            <option>1000</option>
+            <option>1500</option>
+            <option>2000</option>
+
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+    <!----------------10-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Monedas 10$</label>
+            <select class="form-select text-center col-md-9" name="10$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>500</option>
+            <option>1000</option>
+            <option>1500</option>
+            <option>2000</option>
+            <option>2500</option>
+            <option>3000</option>
+
+
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+        
+    <!----------------20-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Billetes 20$</label>
+            <select class="form-select text-center col-md-9" name="20$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>1000</option>
+            <option>2000</option>
+            <option>3000</option>
+            <option>4000</option>
+            <option>5000</option>
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+
+    <!----------------50-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Billetes 50$</label>
+            <select class="form-select text-center col-md-9" name="50$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>1000</option>
+            <option>2000</option>
+            <option>3000</option>
+            <option>4000</option>
+            <option>5000</option>
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+
+    <!----------------100-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Billetes 100$</label>
+            <select class="form-select text-center col-md-9" name="100$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>1000</option>
+            <option>2000</option>
+            <option>3000</option>
+            <option>4000</option>
+            <option>5000</option>
+            <option>6000</option>
+            <option>7000</option>
+            <option>8000</option>
+            <option>9000</option>
+            <option>10000</option>
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+
+    <!----------------200-------------------------->
+    <ol>
+        <div class="row form-group">
+            <label class="text-center">Billetes 200$</label>
+            <select class="form-select text-center col-md-9" name="200$" type="number" required>
+            <option></option>
+            <option>0</option>
+            <option>1000</option>
+            <option>2000</option>
+            <option>3000</option>
+            <option>4000</option>
+            <option>5000</option>
+            <option>6000</option>
+            <option>7000</option>
+            <option>8000</option>
+            <option>9000</option>
+            <option>10000</option>
+        </select>
+        </div>
+        <hr>
+        </ol>
+
+
+
+
+<!---------------- Submit Button------------------------------->
+        <br>
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit">
+                Enviar
+                <i class="bi bi-upload"></i>
+            </button>
+
+        </div>
+</form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

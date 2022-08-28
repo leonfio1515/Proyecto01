@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Vale Apmu</h2>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+            <h5><strong>{{user}}</strong></h5>
+
+
+
+            <!----------------------Nro Vale------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Vale:</label>
+                <input type="number" min="0" class="form-control" value="" name="num_vale" required>
+            </div>
+
+
+            <!----------------------Nombre fun------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Nombre Fun Conrad:</label>
+                <input type="text" class="form-control" value="" name="nombre_fun" required>
+            </div>
+
+            <!----------------------Apellido fun------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Apellido Fun Conrad:</label>
+                <input type="text" class="form-control" value="" name="apellido_fun" required>
+            </div>
+
+            <!----------------------Nro Fun------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Funcionario:</label>
+                <input type="number" min="0" class="form-control" value="" name="num_fun" required>
+            </div>
+
+
+            <!----------------------Fecha Venta------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Fecha Venta:</label>
+                <input type="date" class="form-control" value="" name="fecha_vta" required>
+            </div>
+
+
+            <!----------------------Num Dev------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Dev Visual:</label>
+                <input type="number" min="0" class="form-control" value="" name="num_dev" required>
+            </div>
+
+            <!----------------------Comentario------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Comentarios:</label>
+                <textarea type="text" class="form-control" value="" name="comentarios"></textarea>
+            </div>
+
+
+            <hr class="my-4">
+
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    Enviar
+                    <i class="bi bi-upload"></i>
+                </button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

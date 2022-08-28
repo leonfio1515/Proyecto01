@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Cheque Uniforme</h2>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+            
+            <h5>Suc: {{user}}</h5>
+            <h5>Fecha: {{fechaahora}}</h5>
+
+
+            <!----------------------Importe------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Importe:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Cuotas------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Cuotas:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Transaccion------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Trans: A-</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Articulo------------------------------>
+            <div class="col-sm-9">
+                <label style="font-weight:bold" class="form-label">Articulo:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+
+            <!----------------------Tipo de transaccion------------------------------>
+            <div class="form-check col-sm-4">
+                <label style="font-weight:bold" class="form-label">Vta Credito</label>
+                <input type="checkbox" class="form-check-input" value="">
+            </div>
+
+            <!----------------------Tipo de transaccion------------------------------>
+            <div class="form-check col-sm-4">
+                <label style="font-weight:bold" class="form-label">Vta Contado</label>
+                <input type="checkbox" class="form-check-input" value="">
+            </div>
+
+            <!----------------------Forma de pago------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Forma de pago</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            
+            <!----------------------Nombre funcionario------------------------------>
+            <div class="col-sm-9">
+                <label style="font-weight:bold" class="form-label">Nombre funcionario:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+
+            <!----------------------Ci Funcionario------------------------------>
+            <div class="col-sm-6">
+                <label style="font-weight:bold" class="form-label">Ci funcionario:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Num fun------------------------------>
+            <div class="col-sm-3">
+                <label style="font-weight:bold" class="form-label">Num Funcionario:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <h5>Firma Funcionario:_____________________</h5>
+ <br>
+            <h5>Firma Encargado:_______________________</h5>
+
+
+            <hr class="my-4">
+
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

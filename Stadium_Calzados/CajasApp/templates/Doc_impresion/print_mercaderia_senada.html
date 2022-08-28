@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Mercaderia Señada</h2><br>
+        <h3>(30 dias)</h3>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+            <div class="col-sm-6">
+            <small>Una vez vencido el plazo deberan comunicarse con el cliente para que vuelva a realizar otra seña o el par vuelve a la venta</small>
+            </div>
+
+            <h5><strong>{{user}}</strong></h5>
+            <h5>Fecha: {{fechaahora}}</h5>
+
+
+            <!----------------------Vendedor------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Vendedor:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+
+            <!----------------------Transaccion------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Transaccion:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Importe------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Importe:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+            <!----------------------Cliente------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Cliente:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Cedula------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Cedula:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+
+
+            <!----------------------Telefono------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Telefono:</label>
+                <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+            <!----------------------Cant Art------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Cantidad de articulos:</label>
+                <input type="number" min="0" class="form-control" value="">
+            </div>
+            <div class="col-sm-3"></div>
+
+
+            <hr class="my-4">
+
+            <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="col-12">
+<div class="table">
+
+    <center><br><h4><b>Sugerencias y Quejas</b></h4></center><br>
+
+<table class="table" style="background-color: darkgrey;">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Fecha Mensaje</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Asunto</th>
+
+        </tr>
+    </thead>
+
+<tbody><center>
+    
+{% for n in filtro %}
+
+<tr>
+    <td>{{ n.fecha_creado }}</td>
+    <td>{{ n.nombre }}</td>
+    <td>{{ n.asunto }}</td>
+
+    <td><a type="button" class="btn btn-outline-success" href="{% url 'mensajes_detail' n.id %}">Detalle <i
+                class="bi bi-binoculars-fill"></i></a></td>
+
+</tr>
+</center>
+{% endfor %}
+    
+</tbody>
+</table>
+<br>
+</div>
+</div>
+</div>
+{% endblock %}

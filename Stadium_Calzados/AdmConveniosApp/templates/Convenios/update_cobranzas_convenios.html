@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <div class="py-5 text-center col-sm-9">
+        <h2>Cobranzas Convenios</h2>
+    </div>
+
+
+    <!----------------------DIV FORMULARIO------------------------------>
+    <form class="needs-validation" action="../cobranzas_convenios_guarda" novalidate method="POST">
+        {% csrf_token %}
+        <div class="row g-3 col-sm-9">
+
+
+
+
+            <!----------------------Hidden------------------------------>
+            <input type="hidden" value="{{form.id}}" name="id">
+            <input type="hidden" value="{{form.mes_cobro}}" name="mes_cobro">
+            <input type="hidden" value="{{form.fecha_corte}}" name="fecha_corte">
+            <input type="hidden" value="{{form.num_empresa}}" name="num_empresa">
+            <input type="hidden" value="{{form.nombre_empresa}}" name="nombre_empresa">
+            <input type="hidden" value="{{form.mes_resumen}}" name="mes_resumen">
+            <input type="hidden" value="{{form.imp_resumen}}" name="imp_resumen">
+            <input type="hidden" value="{{form.imp_bonificacion}}" name="imp_bonificacion">
+            <input type="hidden" value="{{form.num_documento}}" name="num_documento">
+            <input type="hidden" value="{{form.imp_resguardo}}" name="imp_resguardo">
+            <input type="hidden" value="{{form.imp_recargo}}" name="imp_recargo">
+            <input type="hidden" value="{{form.imp_cobrar}}" name="imp_cobrar">
+            <input type="hidden" value="{{form.medio_pago}}" name="medio_pago">
+            <input type="hidden" value="{{form.sap_convenios}}" name="sap_convenios">
+
+            <h5>Nombre: {{form.nombre_empresa}}</h5>
+            <h5>Importe a cobrar: {{form.imp_cobrar}}</h5>
+            <h5>Medio de pago: {{form.medio_pago}}</h5>
+
+            <!----------------------Num SAP------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num SAP Banco:</label>
+                <input type="number" min="1" class="form-control" value="" name="sap_banco" required>
+            </div>
+
+            <!----------------------Imp Pago------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Importe Pago:</label>
+                <input type="number" min="0" class="form-control" value="" name="imp_pago" required>
+            </div>
+
+            <!----------------------Fecha Pago------------------------------>
+            <div class="col-sm-4">
+                <label style="font-weight:bold" class="form-label">Num Devolucion:</label>
+                <input type="date" class="form-control" value="" name="fecha_pago" required>
+            </div>
+
+                <hr class="my-4">
+
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        Guardar
+                        <i class="bi bi-upload"></i>
+                    </button>
+    </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

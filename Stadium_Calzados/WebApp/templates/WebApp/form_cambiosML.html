@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Contact section-->
+
+<div class="container px-5 my-5 px-5">
+    <div class="text-center mb-5">
+        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+        <h2 class="fw-bolder">Cambios MercadoLibre</h2>
+    </div>
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8">
+
+            <!-------------------------FORM----------------------------->
+<form id="contactForm" method="POST">{% csrf_token %}
+
+    <!------------------ Name input------------------------>
+    <div class="form-floating mb-3">
+        <input class="form-control" name="Nombre" type="text" placeholder="Escriba el nombre del cliente..."
+            required>
+        <label for="name">Nombre de cliente</label>
+    </div>
+
+
+    <!------------------- CI input------------------>
+    <div class="form-floating mb-3">
+        <input class="form-control" name="CI" type="number" placeholder="Ingrese la cedula" required>
+        <label for="phone">Cedula cliente</label>
+        <div class="invalid-feedback">Debe indicar una cedula.</div>
+    </div>
+
+    <!-------------- Num vta input---------------------->
+    <div class="form-floating mb-3">
+        <input class="form-control" name="Pedido" type="number" placeholder="Numero de pedido"
+            required>
+        <label for="phone">Numero de Pedido</label>
+    </div>
+
+
+    <!--------------------- Fecha compra input-------------------->
+    <div class="form-floating mb-3">
+        <input class="form-control" name="Fecha_compra" type="date" placeholder="Fecha de compra" required>
+        <label for="phone">Fecha de compra</label>
+    </div>
+
+
+
+    <!------------------- Importe input--------------------->
+    <div class="form-floating mb-3">
+        <input class="form-control" name="Importe" type="number" placeholder="Importe" required>
+        <label for="phone">Importe</label>
+    </div>
+
+
+    
+    <!---------------- Message input---------------------->
+    <div class="form-floating mb-3">
+        <textarea class="form-control" name="Comentario" id="message" type="text"
+            placeholder="Comentario..." style="height: 10rem" required></textarea>
+        <label for="message">Comentarios</label>
+    </div>
+
+
+    <!-- Submit Button-->
+    <div class="d-grid">
+        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Cargar <i class="bi bi-chat-left-text"></i></button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

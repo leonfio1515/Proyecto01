@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center; background-color:lightgray;">
+<h6>Importe total de compra sin descuento: <strong>${{importe_compra}}</strong></h6>
+<h6>Paga <strong>${{monto_paga}}</strong> con un <strong>{{descuento_paga}}%</strong> de descuento.</h6>
+<h6>Importe del descuento: <strong>${{imp_desc}}</strong></h6>
+<br>
+<h6>Diferencia a pagar <strong>${{imp_dif}}</strong> con un <strong>{{descuento_dif}}%</strong> de descuento</h6>
+<h6>Importe del descuento: <strong>{{imp_desc_dif}}</strong></h6>
+<br>
+<h4>Total del descuento: <strong style="color:blue">{{tot_desc}}</strong></h4>
+<h4>Monto Final: <strong style="color:red">{{tot_venta}}</strong></h4>
+</div>
+<br>
+<div>
+<center>
+    <a href="{% url 'calcula_descuento' %}" class="btn btn-primary">
+        < Regresar</a>
+    <button class="btn btn-success" onclick="window.print()">Imprimir</button>
+</center>
+</div>
+{% endblock %}
